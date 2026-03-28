@@ -20,13 +20,18 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
+
+ul, li { 
+  padding: 0;
+  margin: 0;
+}
+
 @font-face { 
     font-family: "MonoSpace-Bold";
     src: url("./fonts/SpaceMono-Bold.woff2");
     font-display: swap;
     font-weight: 700; 
 }
-
 
 :root { 
     /* ### Primary */
@@ -39,6 +44,27 @@ img, picture, video, canvas, svg {
     --Grey-50: hsl(189, 47%, 97%);
     --White: hsl(0, 100%, 100%);
 }
+
+
+body { 
+  font-family: "MonoSpace-Bold";
+  background-color: var(--Grey-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+
+.container { 
+  display: flex;
+  gap: 1rem;
+  background-color: var(--White);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+
 
 
 

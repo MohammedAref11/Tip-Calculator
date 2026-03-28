@@ -5,11 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="preload" href="./fonts/SpaceMono-Bold.woff2" as="font" type="font/woff2" crossorigin="annoymous">
   <link rel="stylesheet" href="./style.css">
   <script defer src="./script.js"></script>
 </head>
 <body>
 
+  <div class="container">
+    <div class="left-side">
+      <label for="bill-input">Bill</label>
+      <input type="text" class="user-input--bill">
+
+      <p class="select-tip-label">Select Tip %</p>
+
+      <div class="tip-buttons-grid">
+        <button class="select-tip-button">5%</button>
+        <button class="select-tip-button">5%</button>
+        <button class="select-tip-button">5%</button>
+        <button class="select-tip-button">5%</button>
+        <button class="select-tip-button">5%</button>
+        <input type="number" class="tip-input">
+      </div>
+
+      <label for="number-of-people-input">Number of People</label>
+      <span class="error-mes"></span>
+      <input type="text" class="number-of-people-input">
+    </div>
+
+    <div class="right-side">
+      <div class="amount-con">
+        <div class="amount--text">
+          <h2>Tip Amount</h2>
+          <p>/ person</p>
+        </div>
+        <h3 class="price"></h3>
+      </div>
+      <div class="total-con">
+        <div class="total--text">
+          <h2>Total</h2>
+          <p>/ person</p>
+        </div>
+        <h3 class="price"></h3>
+      </div>
+
+      <button class="reset-button">Reset</button>
+    </div>
+  </div>
+
+  
 
 
 </body>
