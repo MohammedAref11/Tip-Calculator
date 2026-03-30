@@ -21,9 +21,10 @@ img, picture, video, canvas, svg {
 }
 
 
-ul, li { 
+ul, li , input, button{ 
   padding: 0;
   margin: 0;
+  font-family: inherit;
 }
 
 @font-face { 
@@ -58,13 +59,95 @@ body {
 
 .container { 
   display: flex;
-  gap: 1rem;
+  flex-direction: column; 
+  gap: 2rem;
   background-color: var(--White);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 1rem;
+  width: 800px;
+}
+
+.right-side { 
+  flex-basis: 50%;
+}
+.left-side { 
+  padding: 1em;
+}
+
+.label-bill { 
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+  color: var(--Grey-500);
+  position: relative;
+  margin-bottom: 1em; 
+}
+
+.label-bill::before { 
+  content: url("./images/icon-dollar.svg");
+  position: absolute;
+  top: 60%;
+  left: 3%;
+  z-index: 1;
+}
+
+.user-bill-input {
+  position: relative; 
+  border: 2px solid transparent;
+  outline: none;
+  background-color: var(--Grey-50);
+  width: 100%;
+  color: var(--Green-900);
+  font-size: 1.5rem;
+  text-align: right;
+  padding: .2em;
+}
+
+.user-bill-input:active, .user-bill-input:hover { 
+  border: 2px solid var(--Green-400); 
+  cursor: pointer;
+}
+
+.select-tip-label { 
+  margin-bottom: .5em;
+  color: var(--Grey-500);
+}
+
+.tip-buttons-grid { 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .7rem; 
+  margin-bottom: 1em;
+}
+
+.select-tip-button { 
+  background-color: var(--Green-900);
+  color: var(--White);
+  border: none;
+  padding: .2rem .3rem;
+  font-size: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.select-tip-button:hover { 
+  background-color: var(--Green-400);
+}
+
+.user-tip-input { 
+  width: 100%;
 }
 
 
 
+@media(min-width: 750px) { 
+  .container { 
+    flex-direction: row;
+  }
+
+  .tip-buttons-grid { 
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 
