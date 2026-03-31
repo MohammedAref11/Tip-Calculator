@@ -51,11 +51,12 @@ body {
   font-family: "MonoSpace-Bold";
   background-color: var(--Grey-200);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
   min-height: 100vh;
 }
-
 
 .container { 
   display: flex;
@@ -64,20 +65,22 @@ body {
   background-color: var(--White);
   padding: 2rem;
   border-radius: 1rem;
-  width: 800px;
+  width: 100%;
+  max-width: 820px;
 }
 
-.right-side { 
-  flex-basis: 50%;
-}
+/******* Left Side ******/
 .left-side { 
   padding: 1em;
 }
 
-.label-bill { 
+/***** Input labels ******/
+
+.label-bill, 
+.number-of-people-label { 
   display: flex;
   flex-direction: column;
-  gap: .3em;
+  gap: .8em;
   color: var(--Grey-500);
   position: relative;
   margin-bottom: 1em; 
@@ -91,7 +94,18 @@ body {
   z-index: 1;
 }
 
-.user-bill-input {
+.number-of-people-label:before {
+  content: url("./images/icon-person.svg"); 
+  position: absolute;
+  top: 60%;
+  left: 3%;
+  z-index: 1;
+}
+
+/* *********** Input fileds ********/
+
+.user-bill-input, 
+.number-of-people-input {
   position: relative; 
   border: 2px solid transparent;
   outline: none;
@@ -100,12 +114,12 @@ body {
   color: var(--Green-900);
   font-size: 1.5rem;
   text-align: right;
-  padding: .2em;
+  padding: .3em;
+  padding-inline: 1rem;
 }
 
-.user-bill-input:active, .user-bill-input:hover { 
+.user-bill-input:hover, .number-of-people-input:hover { 
   border: 2px solid var(--Green-400); 
-  cursor: pointer;
 }
 
 .select-tip-label { 
@@ -131,12 +145,80 @@ body {
 }
 
 .select-tip-button:hover { 
-  background-color: var(--Green-400);
+  background-color: var(--Grey-200);
+  color: var(--Green-900);
 }
 
-.user-tip-input { 
+.select-tip-custom { 
   width: 100%;
+  border: 2px solid transparent;
+  outline: none;
+  background-color: var(--Grey-50);
+  text-align: center;
 }
+
+.select-tip-custom::placeholder { 
+  color: var(--Grey-400); 
+  font-size: 1.3rem;
+}
+
+.select-tip-custom:hover { 
+  border: 2px solid var(--Green-400);
+}
+
+/******* Rigth Side *********/
+
+.right-side { 
+  flex-basis: 60%;
+  background-color: var(--Green-900);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: grid;
+}
+
+.amount-con, 
+.total-con { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: start;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.amount-text h2, 
+.total-text h2 { 
+  color: var(--White);
+  font-size: 1.3rem;
+}
+
+.amount-text p, 
+.total-text p { 
+  color: var(--Grey-400);
+  font-size: .90rem;
+}
+
+.price { 
+  font-size: 2.5rem;
+  color: var(--Green-400);
+}
+
+.reset-button { 
+  height: fit-content;
+  align-self: end;
+  font-size: 1.3rem;
+  border: none;
+  background-color: var(--Green-400);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: var(--Green-900);
+}
+
+.reset-button:hover { 
+  background-color: var(--Grey-200);
+  cursor: pointer;
+}
+
 
 
 

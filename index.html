@@ -11,10 +11,11 @@
 </head>
 <body>
 
+  <img src="./images/logo.svg" alt="">
   <div class="container">
     <div class="left-side">
     <label class="label-bill" for="user-bill-input">Bill
-      <input type="number" id="user-bill-input" class="user-bill-input">
+      <input type="text" id="user-bill-input" class="user-bill-input">
     </label>
       <p class="select-tip-label">Select Tip %</p>
 
@@ -24,31 +25,31 @@
         <button class="select-tip-button">15%</button>
         <button class="select-tip-button">25%</button>
         <button class="select-tip-button">50%</button>
-        <input type="number" class="user-tip-input" name="" id="">
+        <input type="text" class="select-tip-custom" name="" id="" placeholder="Custom">
       </div>
 
-      <label for="number-of-people-input">Number of People</label>
-      <span class="error-mes"></span>
+      <label for="number-of-people-input" class="number-of-people-label">Number of People
       <input type="text" id="number-of-people-input" class="number-of-people-input">
+      </label>
     </div>
 
     <div class="right-side">
       <div class="amount-con">
-        <div class="amount--text">
+        <div class="amount-text">
           <h2>Tip Amount</h2>
           <p>/ person</p>
         </div>
-        <h3 class="price"></h3>
+        <h3 class="price">$0.00</h3>
       </div>
       <div class="total-con">
-        <div class="total--text">
+        <div class="total-text">
           <h2>Total</h2>
           <p>/ person</p>
         </div>
-        <h3 class="price"></h3>
+        <h3 class="price">$0.00</h3>
       </div>
 
-      <button class="reset-button">Reset</button>
+      <button class="reset-button">RESET</button>
     </div>
   </div>
 
