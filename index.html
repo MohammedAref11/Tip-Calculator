@@ -15,21 +15,24 @@
   <div class="container">
     <div class="left-side">
     <label class="label-bill" for="user-bill-input">Bill
-      <input type="text" id="user-bill-input" class="user-bill-input">
+      <input type="text" 
+             id="user-bill-input" 
+             class="user-bill-input">
     </label>
       <p class="select-tip-label">Select Tip %</p>
-
       <div class="tip-buttons-grid">
-        <button class="select-tip-button">5%</button>
-        <button class="select-tip-button">10%</button>
-        <button class="select-tip-button">15%</button>
-        <button class="select-tip-button">25%</button>
-        <button class="select-tip-button">50%</button>
+        <button id="selectButtons" class="select-tip-button" value="5">5%</button>
+        <button id="selectButtons" class="select-tip-button" value="10">10%</button>
+        <button id="selectButtons" class="select-tip-button" value="15">15%</button>
+        <button id="selectButtons" class="select-tip-button" value="25">25%</button>
+        <button id="selectButtons" class="select-tip-button" value="50">50%</button>
         <input type="text" class="select-tip-custom" name="" id="" placeholder="Custom">
       </div>
-
       <label for="number-of-people-input" class="number-of-people-label">Number of People
-      <input type="text" id="number-of-people-input" class="number-of-people-input">
+      <input type="text" 
+             id="numOfPeopleInput" 
+             class="number-of-people-input"
+             />
       </label>
     </div>
 
@@ -39,17 +42,17 @@
           <h2>Tip Amount</h2>
           <p>/ person</p>
         </div>
-        <h3 class="price">$0.00</h3>
+        <h3 class="price-amount" id="priceAmount">$0.00</h3>
       </div>
       <div class="total-con">
         <div class="total-text">
           <h2>Total</h2>
           <p>/ person</p>
         </div>
-        <h3 class="price">$0.00</h3>
+        <h3 class="price-total" id="priceTotal">$0.00</h3>
       </div>
 
-      <button class="reset-button">RESET</button>
+      <button class="reset-button" id="resetBtn">RESET</button>
     </div>
   </div>
 
