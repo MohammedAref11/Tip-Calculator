@@ -219,9 +219,6 @@ body {
   cursor: pointer;
 }
 
-
-
-
 @media(min-width: 750px) { 
   .container { 
     flex-direction: row;
@@ -231,5 +228,3 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-
