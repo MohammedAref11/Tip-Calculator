@@ -13,6 +13,41 @@ const totalEl = document.getElementById("priceTotal");
 
 let billValue;
 let tipPercentage;
+let tipAmount; 
+
+function displayTotal() { 
+    const numOfPeople = Number(numOfPeopleInput.value); 
+    const totalAmount = billValue / numOfPeople;   
+    if (numOfPeople === null || numOfPeople === NaN || numOfPeople === 0) { 
+        totalEl.textContent = `$0.00`; 
+    }else if (isNaN(totalAmount)) { 
+        totalEl.textContent = `$0.00`; 
+    }else { 
+        totalEl.textContent = `$${totalAmount.toFixed(2)}`; 
+    } 
+    getTipAmount();
+}
+
+function getTipAmount() { 
+    tipAmount = (tipPercentage / 100) * billValue;
+    const numOfPeople = Number(numOfPeopleInput.value); 
+    const amountPer = tipAmount / numOfPeople; 
+    amountEl.textContent = `$${amountPer}`
+    if (isNaN(amountPer)) { 
+        amountEl.textContent = `$0.00`
+    } else if (numOfPeople === null || numOfPeople === NaN || numOfPeople === 0) { 
+        amountEl.textContent = `$0.00`
+    }
+    else { 
+        amountEl.textContent = `$${amountPer.toFixed(2)}`; 
+    } 
+}
+
+function getBillValue() {  
+        const bill = Number(billInput.value);
+        billValue = bill; 
+        displayTotal();
+}
 
 tipButtons.forEach(element => { 
     element.addEventListener('click', () => { 
@@ -22,7 +57,6 @@ tipButtons.forEach(element => {
 })
 
 buttonsGrid.addEventListener('click', (event) => {  
-
     tipButtons.forEach(btn => { 
         if (btn === event.target) { 
             btn.classList.toggle("clicked")
@@ -30,23 +64,9 @@ buttonsGrid.addEventListener('click', (event) => {
             btn.classList.remove("clicked")
         }
     })
+    getBillValue(); 
+    displayTotal(); 
 })
-
-function getBillValue() {  
-        const bill = Number(billInput.value);
-        billValue = bill; 
-        console.log(billValue); 
-        displayTotal();
-}
-
-function displayTotal() { 
-    const numOfPeople = Number(numOfPeopleInput.value); 
-    const totalAmount = billValue / numOfPeople; 
-    totalEl.textContent = `$${totalAmount.toFixed(2)}`; 
-    if (numOfPeople === null || numOfPeople === NaN || numOfPeople === 0) { 
-        totalEl.textContent = `$0.00`; 
-    }
-}
 
 resetBtn.addEventListener('click', () => { 
     billInput.value = ""; 
