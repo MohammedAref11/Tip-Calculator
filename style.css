@@ -142,9 +142,16 @@ body {
   font-size: 24px;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s all ease;
 }
 
+
 .select-tip-button:hover { 
+  background-color: var(--Grey-200);
+  color: var(--Green-900);
+}
+
+.clicked { 
   background-color: var(--Grey-200);
   color: var(--Green-900);
 }
