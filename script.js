@@ -56,7 +56,7 @@ function getTipAmount() {
 function getBillValue() {  
         const bill = Number(billInput.value);
         billValue = bill; 
-        displayTotal();
+        displayTotalAmount();
 }
 
 tipButtons.forEach(element => { 
