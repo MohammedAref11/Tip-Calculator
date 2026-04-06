@@ -17,7 +17,8 @@ let tipAmount;
 
 function displayTotal() { 
     const numOfPeople = Number(numOfPeopleInput.value); 
-    const totalAmount = billValue / numOfPeople;   
+    let totalAmount = billValue / numOfPeople;   
+    totalAmount += tipAmount; 
     if (numOfPeople === null || numOfPeople === NaN || numOfPeople === 0) { 
         totalEl.textContent = `$0.00`; 
     }else if (isNaN(totalAmount)) { 
@@ -32,6 +33,7 @@ function getTipAmount() {
     tipAmount = (tipPercentage / 100) * billValue;
     const numOfPeople = Number(numOfPeopleInput.value); 
     const amountPer = tipAmount / numOfPeople; 
+    console.log(tipAmount)
     amountEl.textContent = `$${amountPer}`
     if (isNaN(amountPer)) { 
         amountEl.textContent = `$0.00`
@@ -52,7 +54,6 @@ function getBillValue() {
 tipButtons.forEach(element => { 
     element.addEventListener('click', () => { 
         tipPercentage = element.value; 
-        console.log(tipPercentage)
     })
 })
 
