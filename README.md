@@ -11,7 +11,7 @@ Features of this Website
 
 ## Website on different Screen sizes
 
-![Page Desktop]("./result%20images/Screenshot%202026-04-06%20191023.png")
+![Page Desktop](./result%20images/Screenshot%202026-04-06%20191023.png)
 
 ![Page Tablet](./result%20images/Screenshot%202026-04-06%20191145.png)
 
