@@ -102,6 +102,17 @@ body {
   z-index: 1;
 }
 
+.error-mess:after { 
+  content: "Can't be zero"; 
+  position: absolute;
+  top: 0%;
+  left: 65%;
+  z-index: 2;
+  font-size: 19px;
+  color: tomato;
+}
+
+
 /* *********** Input fileds ********/
 
 .user-bill-input, 
@@ -145,7 +156,6 @@ body {
   transition: 0.3s all ease;
 }
 
-
 .select-tip-button:hover { 
   background-color: var(--Grey-200);
   color: var(--Green-900);
@@ -160,6 +170,7 @@ body {
   width: 100%;
   border: 2px solid transparent;
   outline: none;
+  font-size: 18px;
   background-color: var(--Grey-50);
   text-align: center;
 }
@@ -176,7 +187,7 @@ body {
 /******* Rigth Side *********/
 
 .right-side { 
-  flex-basis: 60%;
+  flex-basis: 75%;
   background-color: var(--Green-900);
   padding: 1.5rem;
   border-radius: 8px;
@@ -188,6 +199,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: start;
   padding-bottom: 1rem;
   padding-top: 1rem;
@@ -226,7 +238,9 @@ body {
   cursor: pointer;
 }
 
-@media(min-width: 750px) { 
+
+
+@media(min-width: 800px) { 
   .container { 
     flex-direction: row;
   }
