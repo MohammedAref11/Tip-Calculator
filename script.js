@@ -6,7 +6,7 @@ const buttonsGrid = document.querySelector(".tip-buttons-grid");
 //* Fetching all select tips buttons in array  
 const tipButtons = document.querySelectorAll("#selectButtons");
 // * Custom Tip Percentage input
-const customTip = document.getElementById("customTipPer") 
+const customTipInput = document.getElementById("customTipPer") 
 //* Reset button
 const resetBtn = document.getElementById("resetBtn"); 
 //* Price elements (Total / Amount)
@@ -19,7 +19,7 @@ let billValue;
 let tipPercentage;
 let tipAmount; 
 
-function displayTotal() { 
+function displayTotalAmount() { 
     const numOfPeople = Number(numOfPeopleInput.value);
     const tipAmountDivided = tipAmount / numOfPeople;  
     const totalAmount = (billValue / numOfPeople) + tipAmountDivided;  
@@ -32,7 +32,6 @@ function displayTotal() {
     } 
     if(numOfPeople <= 0) { 
         numOfPeopleLabel.classList.add("error-mess");
-
     }else { 
         numOfPeopleLabel.classList.remove("error-mess");
     }
@@ -52,10 +51,6 @@ function getTipAmount() {
     else { 
         amountEl.textContent = `$${amountPer.toFixed(2)}`; 
     } 
-
-    if (tipPercentage <= 0) { 
-
-    }
 }
 
 function getBillValue() {  
@@ -79,17 +74,17 @@ buttonsGrid.addEventListener('click', (event) => {
         }
     })
     getBillValue(); 
-    displayTotal(); 
+    displayTotalAmount(); 
 })
 
 resetBtn.addEventListener('click', () => { 
     billInput.value = ""; 
     numOfPeopleInput.value = ""; 
 })
-customTip.addEventListener('input', () => { 
-    tipPercentage = customTip.value; 
+customTipInput.addEventListener('input', () => { 
+    tipPercentage = customTipInput.value; 
     getBillValue(); 
-    displayTotal(); 
+    displayTotalAmount(); 
 })
 billInput.addEventListener('input', getBillValue); 
-numOfPeopleInput.addEventListener('input', displayTotal);
+numOfPeopleInput.addEventListener('input', displayTotalAmount);
